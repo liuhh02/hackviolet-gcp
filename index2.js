@@ -2,6 +2,7 @@ const express = require('express');
 // Imports the Google Cloud client library
 const vision = require('@google-cloud/vision');
 const app = express();
+const { checkError } = require('./multerLogic')
 
 const port = 3000
 
@@ -13,9 +14,10 @@ async function quickstart(req, res) {
     try {
         // Creates a client
         const client = new vision.ImageAnnotatorClient();
-
+        const imageDesc = await checkError(req, res)
+        console.log(imageDesc)
         // Performs text detection on the local file
-        const [result] = await client.textDetection('./img/journal.jpg');
+        const [result] = await client.textDetection(imageDesc.path);
         const detections = result.textAnnotations;
         const [ text, ...others ] = detections
         let str = text.description.replace(/\s+/g, ' ').trim();
