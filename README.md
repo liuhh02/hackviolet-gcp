@@ -1,5 +1,5 @@
 ## hackviolet-gcp ##
-Repository for [hackviolet](https://devpost.com/software/beautifly) using Google Cloud Platform's AI APIs with Nodejs. Uses Cloud Vision API for OCR, Cloud Voice API for Speech Recognition and Cloud Natural Language API for Sentiment Analysis.
+Repository for [HackViolet 2021](https://devpost.com/software/beautifly) using Google Cloud Platform's AI APIs with Nodejs. Uses Cloud Vision API for OCR, Cloud Voice API for Speech Recognition and Cloud Natural Language API for Sentiment Analysis.
 
 ocr.js & multerLogic.js are required to run the OCR
 
